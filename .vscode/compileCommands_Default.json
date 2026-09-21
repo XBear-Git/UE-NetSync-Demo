@@ -1,0 +1,682 @@
+[
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSync.Build.cs",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSync.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSync.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSyncCharacter.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSyncCharacter.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSyncGameMode.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSyncGameMode.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSyncPlayerController.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\NetworkSyncPlayerController.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatAIController.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatAIController.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatEnemy.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatEnemy.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatEnemySpawner.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatEnemySpawner.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatStateTreeUtility.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\CombatStateTreeUtility.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\EnvQueryContext_Danger.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\EnvQueryContext_Danger.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\EnvQueryContext_Player.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\AI\\EnvQueryContext_Player.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Animation\\AnimNotify_CheckChargedAttack.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Animation\\AnimNotify_CheckChargedAttack.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Animation\\AnimNotify_CheckCombo.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Animation\\AnimNotify_CheckCombo.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Animation\\AnimNotify_DoAttackTrace.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Animation\\AnimNotify_DoAttackTrace.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\CombatCharacter.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\CombatCharacter.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\CombatGameMode.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\CombatGameMode.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\CombatPlayerController.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\CombatPlayerController.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatActivationVolume.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatActivationVolume.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatCheckpointVolume.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatCheckpointVolume.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatDamageableBox.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatDamageableBox.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatDummy.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatDummy.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatLavaFloor.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Gameplay\\CombatLavaFloor.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Interfaces\\CombatActivatable.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Interfaces\\CombatActivatable.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Interfaces\\CombatAttacker.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Interfaces\\CombatAttacker.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Interfaces\\CombatDamageable.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\Interfaces\\CombatDamageable.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\UI\\CombatLifeBar.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Combat\\UI\\CombatLifeBar.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\Animation\\AnimNotify_EndDash.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\Animation\\AnimNotify_EndDash.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\PlatformingCharacter.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\PlatformingCharacter.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\PlatformingGameMode.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\PlatformingGameMode.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\PlatformingPlayerController.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_Platforming\\PlatformingPlayerController.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\AI\\SideScrollingAIController.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\AI\\SideScrollingAIController.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\AI\\SideScrollingNPC.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\AI\\SideScrollingNPC.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\AI\\SideScrollingStateTreeUtility.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\AI\\SideScrollingStateTreeUtility.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingJumpPad.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingJumpPad.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingMovingPlatform.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingMovingPlatform.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingPickup.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingPickup.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingSoftPlatform.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Gameplay\\SideScrollingSoftPlatform.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Interfaces\\SideScrollingInteractable.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\Interfaces\\SideScrollingInteractable.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingCameraManager.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingCameraManager.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingCharacter.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingCharacter.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingGameMode.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingGameMode.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingPlayerController.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\SideScrollingPlayerController.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\UI\\SideScrollingUI.cpp",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UE\\UnrealProjects\\NetworkSync\\Source\\NetworkSync\\Variant_SideScrolling\\UI\\SideScrollingUI.h",
+		"arguments": [
+			"D:\\VS\\VS2022\\VS Exe\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UE\\UnrealProjects\\NetworkSync\\.vscode\\compileCommands_Default\\NetworkSync.1.rsp"
+		],
+		"directory": "D:\\UE\\UE_5.7\\Engine\\Source"
+	}
+]
