@@ -14,6 +14,7 @@ public class NetworkSync : ModuleRules
 			"Engine",
 			"InputCore",
 			"EnhancedInput",
+			"Niagara",
 			"AIModule",
 			"StateTreeModule",
 			"GameplayStateTreeModule",
