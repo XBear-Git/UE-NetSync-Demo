@@ -37,6 +37,20 @@ public:
 	void ServerRequestFire(const FVector& AimDirection);
 
 protected:
+	/** Death montage configured by BP_NetDemoCharacter. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Death")
+	TObjectPtr<class UAnimMontage> DeathMontage;
+
+	/** Prevents the same death montage from being started more than once. */
+	bool bDeathAnimationPlayed = false;
+
+	/** Broadcasts the death presentation to all currently connected peers. */
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastPlayDeathAnimation();
+
+	void EnterDeathState();
+	void PlayDeathAnimation();
+
 	/** World-space widget component used for the overhead health bar. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Health", meta=(AllowPrivateAccess="true"))
 	TObjectPtr<class UWidgetComponent> HealthBarComponent;

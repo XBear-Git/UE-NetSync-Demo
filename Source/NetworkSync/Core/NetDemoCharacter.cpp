@@ -2,10 +2,13 @@
 
 #include "NetDemoCharacter.h"
 
+#include "Animation/AnimInstance.h"
+#include "Animation/AnimMontage.h"
 #include "EnhancedInputComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/WidgetComponent.h"
 #include "GameFramework/Controller.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "NetDemoHealthBar.h"
 #include "NetDemoProjectile.h"
@@ -85,6 +88,7 @@ float ANetDemoCharacter::TakeDamage(
 	{
 		CurrentHP = 0.0f;
 		bIsDead = true;
+		EnterDeathState();
 	}
 
 	RefreshHealthBar();
@@ -112,6 +116,58 @@ void ANetDemoCharacter::OnRep_IsDead()
 {
 	UE_LOG(LogNetworkSync, Log, TEXT("[Health] %s death state replicated: %s"), *GetName(), bIsDead ? TEXT("Dead") : TEXT("Alive"));
 	RefreshHealthBar();
+
+	if (bIsDead)
+	{
+		PlayDeathAnimation();
+
+		if (GetCharacterMovement())
+		{
+			GetCharacterMovement()->DisableMovement();
+		}
+	}
+}
+
+void ANetDemoCharacter::EnterDeathState()
+{
+	if (!HasAuthority())
+	{
+		return;
+	}
+
+	if (GetCharacterMovement())
+	{
+		GetCharacterMovement()->DisableMovement();
+	}
+
+	MulticastPlayDeathAnimation();
+}
+
+void ANetDemoCharacter::PlayDeathAnimation()
+{
+	if (bDeathAnimationPlayed || !DeathMontage || !GetMesh())
+	{
+		return;
+	}
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (!AnimInstance)
+	{
+		return;
+	}
+
+	bDeathAnimationPlayed = true;
+	AnimInstance->Montage_Play(DeathMontage, 1.0f);
+}
+
+void ANetDemoCharacter::MulticastPlayDeathAnimation_Implementation()
+{
+	PlayDeathAnimation();
+
+	if (GetCharacterMovement())
+	{
+		GetCharacterMovement()->DisableMovement();
+	}
 }
 
 void ANetDemoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -126,7 +182,7 @@ void ANetDemoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 
 void ANetDemoCharacter::Fire()
 {
-	if (!IsLocallyControlled() || !GetController())
+	if (bIsDead || !IsLocallyControlled() || !GetController())
 	{
 		return;
 	}
@@ -147,7 +203,7 @@ bool ANetDemoCharacter::ServerRequestFire_Validate(const FVector& AimDirection)
 
 void ANetDemoCharacter::ServerRequestFire_Implementation(const FVector& AimDirection)
 {
-	if (!HasAuthority() || !ProjectileClass || !GetWorld())
+	if (!HasAuthority() || bIsDead || !ProjectileClass || !GetWorld())
 	{
 		return;
 	}
