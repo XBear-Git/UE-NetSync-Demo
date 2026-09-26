@@ -10,6 +10,7 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "NetDemoGameMode.h"
 #include "NetDemoHealthBar.h"
 #include "NetDemoProjectile.h"
 #include "NetworkSync.h"
@@ -89,6 +90,11 @@ float ANetDemoCharacter::TakeDamage(
 		CurrentHP = 0.0f;
 		bIsDead = true;
 		EnterDeathState();
+
+		if (ANetDemoGameMode* GameMode = GetWorld() ? GetWorld()->GetAuthGameMode<ANetDemoGameMode>() : nullptr)
+		{
+			GameMode->ScheduleRespawn(this, GetActorLocation());
+		}
 	}
 
 	RefreshHealthBar();
@@ -125,6 +131,10 @@ void ANetDemoCharacter::OnRep_IsDead()
 		{
 			GetCharacterMovement()->DisableMovement();
 		}
+	}
+	else
+	{
+		ExitDeathState();
 	}
 }
 
@@ -168,6 +178,49 @@ void ANetDemoCharacter::MulticastPlayDeathAnimation_Implementation()
 	{
 		GetCharacterMovement()->DisableMovement();
 	}
+}
+
+void ANetDemoCharacter::ExitDeathState()
+{
+	bDeathAnimationPlayed = false;
+
+	if (GetMesh())
+	{
+		if (UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance())
+		{
+			if (DeathMontage)
+			{
+				AnimInstance->Montage_Stop(0.15f, DeathMontage);
+			}
+		}
+	}
+
+	if (GetCharacterMovement())
+	{
+		GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+	}
+}
+
+void ANetDemoCharacter::RespawnAtTransform(const FTransform& RespawnTransform)
+{
+	if (!HasAuthority())
+	{
+		return;
+	}
+
+	GetWorldTimerManager().ClearTimer(RespawnTimerHandle);
+	CurrentHP = FMath::Max(0.0f, MaxHP);
+	bIsDead = false;
+
+	if (GetCharacterMovement())
+	{
+		GetCharacterMovement()->StopMovementImmediately();
+	}
+
+	SetActorTransform(RespawnTransform, false, nullptr, ETeleportType::TeleportPhysics);
+	ExitDeathState();
+	ForceNetUpdate();
+	RefreshHealthBar();
 }
 
 void ANetDemoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

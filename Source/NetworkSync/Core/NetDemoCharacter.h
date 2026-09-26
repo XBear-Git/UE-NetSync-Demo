@@ -32,6 +32,11 @@ public:
 	UFUNCTION(BlueprintPure, Category="Health")
 	bool IsDead() const { return bIsDead; }
 
+	/** Resets this existing Pawn at a server-selected respawn transform. */
+	void RespawnAtTransform(const FTransform& RespawnTransform);
+
+	FTimerHandle RespawnTimerHandle;
+
 	/** Client request for a server-authoritative projectile spawn. */
 	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerRequestFire(const FVector& AimDirection);
@@ -50,6 +55,7 @@ protected:
 
 	void EnterDeathState();
 	void PlayDeathAnimation();
+	void ExitDeathState();
 
 	/** World-space widget component used for the overhead health bar. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Health", meta=(AllowPrivateAccess="true"))
