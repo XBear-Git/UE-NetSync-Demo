@@ -34,6 +34,15 @@ protected:
 		FVector NormalImpulse,
 		const FHitResult& Hit);
 
+	UFUNCTION()
+	void OnProjectileBeginOverlap(
+		UPrimitiveComponent* OverlappedComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComponent,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult);
+
 	/** Collision root for the projectile. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Projectile", meta=(AllowPrivateAccess="true"))
 	TObjectPtr<USphereComponent> CollisionComponent;

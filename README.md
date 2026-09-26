@@ -22,6 +22,7 @@ Source/NetworkSync/Core/
 ├── NetDemoGameMode.h/.cpp
 ├── NetDemoHealthBar.h/.cpp
 ├── NetDemoPlayerController.h/.cpp
+├── NetDemoRespawnPoint.h/.cpp
 └── NetDemoProjectile.h/.cpp
 ```
 
@@ -86,7 +87,17 @@ bool bIsDead;
 
 文件：`Source/NetworkSync/Core/NetDemoPlayerController.h/.cpp`
 
-继承 `ANetworkSyncPlayerController`，复用模板的 Enhanced Input Mapping Context 和本地输入初始化逻辑。
+继承 `ANetworkSyncPlayerController`，复用模板的 Enhanced Input Mapping Context 和本地输入初始化逻辑；同时绑定本地 `L` 键循环切换 UE 内置网络模拟档位：
+
+```text
+关闭 -> 100ms + 5% 丢包 -> 150ms + 5% 丢包 -> 200ms + 5% 丢包 -> 关闭
+```
+
+### ANetDemoRespawnPoint
+
+文件：`Source/NetworkSync/Core/NetDemoRespawnPoint.h/.cpp`
+
+可放置的重生点 Actor。服务器 GameMode 遍历地图中的重生点，并选择距离死亡位置最近的点。
 
 ### UNetDemoHealthBar
 
@@ -247,7 +258,58 @@ Widget Class = BP_NetDemoHealthBar
 7. 双方都能看到 B 的血条下降。
 8. 当前控制角色血条使用 `SelfColor（默认绿色）`，其他角色血条使用 `OtherColor（默认红色）`。
 
-## 9. 已实现与未实现
+## 9. 晚加入测试
+
+晚加入测试用于确认新客户端能够从服务器获得已经存在角色的当前状态，而不是只验证初始生成。
+
+### 测试步骤
+
+1. PIE 设置 `Number of Players = 2`，使用 Listen Server + Client New Window。
+2. 启动测试，确认 Server 和 Client 都能看到彼此的角色。
+3. 让 Client 角色被火球命中，使其 `CurrentHP` 降低；也可以继续攻击直到 `bIsDead = true`，等待它完成一次死亡和重生。
+4. 保持 Server 和第一个 Client 继续运行，不停止当前 PIE 会话。
+5. 在 PIE 设置中启动第二个 Client，或使用同一 PIE 会话的新增客户端窗口。
+6. 观察新客户端进入场景后的已有角色状态。
+
+### 预期结果
+
+- 新客户端能看到服务器已经生成的所有角色及其当前位置。
+- 已受伤角色的头顶血条直接显示当前 HP，而不是回到满血。
+- 如果加入时角色正处于死亡状态，新客户端收到 `bIsDead=true`，显示死亡血条状态并播放/保持倒地表现。
+- 如果加入时角色已经重生，新客户端收到当前的满血和存活状态。
+- 新客户端自己的 Pawn 由服务器生成并正常获得本地控制权。
+
+### 复制依据
+
+`ANetDemoCharacter` 使用服务器权威属性复制：
+
+```cpp
+UPROPERTY(ReplicatedUsing=OnRep_CurrentHP)
+float CurrentHP;
+
+UPROPERTY(ReplicatedUsing=OnRep_IsDead)
+bool bIsDead;
+```
+
+服务器在 `GetLifetimeReplicatedProps` 中注册这两个属性。客户端收到初始复制或后续更新时，分别通过 `OnRep_CurrentHP` 和 `OnRep_IsDead` 刷新血条及死亡表现。因此晚加入客户端不依赖之前错过的伤害 RPC 或死亡 Multicast。
+
+### 瞬时 Actor 边界
+
+火球是短生命周期的瞬时 Actor。晚加入客户端看不到已经发射、已经命中或已经销毁的火球，这是预期行为；火球不会被保存成历史事件，也不会为晚加入客户端补播过去的飞行和命中特效。晚加入验证应关注角色的持久状态：位置、`CurrentHP`、`bIsDead`、血条和当前死亡/存活表现。
+
+`IsNetStartupActor()` 只用于判断关卡启动时就存在的网络 Actor。本 Demo 的玩家角色和火球由服务器运行时生成，晚加入同步依赖普通 Actor 初始复制和属性复制，不依赖 Net Startup Actor。
+
+### 测试记录
+
+本节需要在编辑器 PIE 实测后补充：
+
+- 测试日期和 UE 版本
+- Server/Client 窗口配置
+- 受伤 HP 数值和晚加入时角色是否死亡
+- 新客户端观察结果
+- Server、Client 窗口截图
+
+## 10. 已实现与未实现
 
 已实现：
 
@@ -261,22 +323,22 @@ Widget Class = BP_NetDemoHealthBar
 - `CurrentHP` 和 `bIsDead` 属性复制
 - OnRep 血条刷新
 - 本地/远程角色血条颜色区分
+- 死亡倒地动画和死亡状态复制
+- 服务器延迟 2 秒重生和最近重生点选择
+- L 键循环网络模拟（关闭、100ms、150ms、200ms；各档 5% 丢包）
 
 尚未实现：
 
-- 死亡动画和死亡特效
-- 禁用死亡角色移动
-- 服务端延迟重生
 - 命中特效 NetMulticast
 - 屏幕 HUD（NetMode、Ping、本地玩家名、自身 HP）
 - 正式胜负、计分和回合逻辑
 - 技能动画复制
 
-## 10. 网络边界声明
+## 11. 网络边界声明
 
 本项目定位为网络同步基础演示，采用 UE 原生通用复制系统（未启用 Iris 高级特性）。
 已实现的机制：属性复制（Replicated / RepNotify）、Server/Client RPC、服务端权威伤害判定、OnRep 客户端表现。
-未实现的机制：自定义传输协议、快照插值、客户端预测手写、延迟丢包模拟、断线重连、帧同步、增量热更、OnlineSubsystem 接入。
+未实现的机制：自定义传输协议、快照插值、客户端预测手写、断线重连、帧同步、增量热更、OnlineSubsystem 接入。
 设计决策：技能伤害在服务端计算以防止客户端作弊；移动同步依赖引擎内置
 CharacterMovementComponent 的客户端预测与服务端校正；表现层（特效/UI）通过 OnRep 触发，与逻辑解耦。
 
