@@ -16,4 +16,16 @@ class ANetDemoPlayerController : public ANetworkSyncPlayerController
 
 public:
 	ANetDemoPlayerController();
+
+protected:
+	virtual void SetupInputComponent() override;
+
+	/** Cycles the local network emulation preset: Off, 100ms, 150ms, 200ms. */
+	void CycleNetworkSimulation();
+
+	/** Applies the selected packet simulation values through UE's built-in Net commands. */
+	void ApplyNetworkSimulation(int32 LagMilliseconds, int32 PacketLossPercent);
+
+	/** 0 = Off, 1 = 100ms, 2 = 150ms, 3 = 200ms. */
+	int32 NetworkSimulationStep = 0;
 };
