@@ -7,13 +7,20 @@
 #include "EnhancedInputComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/WidgetComponent.h"
+#include "Engine/Engine.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/PlayerController.h"
+#include "Kismet/GameplayStatics.h"
 #include "Net/UnrealNetwork.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraSystem.h"
 #include "NetDemoGameMode.h"
-#include "NetDemoHealthBar.h"
+#include "../UI/NetDemoHealthBar.h"
+#include "NetDemoPlayerController.h"
 #include "NetDemoProjectile.h"
 #include "NetworkSync.h"
+#include "Particles/ParticleSystem.h"
 
 ANetDemoCharacter::ANetDemoCharacter()
 {
@@ -167,6 +174,8 @@ void ANetDemoCharacter::PlayDeathAnimation()
 	}
 
 	bDeathAnimationPlayed = true;
+	// 禁止蒙太奇播放结束时自动 Blend Out，让最后一帧持续占据动画槽。
+	DeathMontage->bEnableAutoBlendOut = false;
 	AnimInstance->Montage_Play(DeathMontage, 1.0f);
 }
 
@@ -262,8 +271,18 @@ void ANetDemoCharacter::ServerRequestFire_Implementation(const FVector& AimDirec
 	}
 
 	const float CurrentTime = GetWorld()->GetTimeSeconds();
-	if (CurrentTime - LastFireTime < FireCooldown)
+	const float ElapsedSinceLastFire = CurrentTime - LastFireTime;
+	const float CooldownSeconds = FMath::Max(0.0f, FireCooldown);
+	if (ElapsedSinceLastFire < CooldownSeconds)
 	{
+		const float RemainingSeconds = FMath::Max(0.0f, CooldownSeconds - ElapsedSinceLastFire);
+		ClientNotifySkillCooldown(RemainingSeconds);
+		UE_LOG(
+			LogNetworkSync,
+			Log,
+			TEXT("[Combat] Fire request rejected for %s: cooldown %.2f seconds remaining"),
+			*GetName(),
+			RemainingSeconds);
 		return;
 	}
 	LastFireTime = CurrentTime;
@@ -289,4 +308,60 @@ void ANetDemoCharacter::ServerRequestFire_Implementation(const FVector& AimDirec
 	SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
 	GetWorld()->SpawnActor<ANetDemoProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParameters);
+}
+
+void ANetDemoCharacter::MulticastPlayProjectileHitEffect_Implementation(
+	FVector_NetQuantize HitLocation,
+	FVector_NetQuantizeNormal HitNormal,
+	UParticleSystem* CascadeEffect,
+	UNiagaraSystem* NiagaraEffect,
+	USoundBase* HitSound)
+{
+	if (NiagaraEffect)
+	{
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(
+			GetWorld(),
+			NiagaraEffect,
+			HitLocation,
+			HitNormal.Rotation());
+	}
+
+	if (CascadeEffect)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(
+			GetWorld(),
+			CascadeEffect,
+			HitLocation,
+			HitNormal.Rotation());
+	}
+
+	if (HitSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), HitSound, HitLocation);
+	}
+}
+
+void ANetDemoCharacter::ClientNotifySkillCooldown_Implementation(float RemainingSeconds)
+{
+	// Client RPC 理论上只会路由到拥有该 Pawn 的连接；此检查防止错误路由时污染其他窗口。
+	if (!IsLocallyControlled())
+	{
+		return;
+	}
+
+	const float SafeRemainingSeconds = FMath::Max(0.0f, RemainingSeconds);
+	const FText Message = FText::FromString(FString::Printf(
+		TEXT("技能冷却中，还需 %.1f 秒"),
+		SafeRemainingSeconds));
+
+	if (ANetDemoPlayerController* OwningPlayerController = Cast<ANetDemoPlayerController>(GetController()))
+	{
+		OwningPlayerController->ShowSkillMessageIfHidden(Message);
+	}
+
+	UE_LOG(
+		LogNetworkSync,
+		Log,
+		TEXT("[Combat] Client received fire cooldown notification: %.2f seconds remaining"),
+		SafeRemainingSeconds);
 }

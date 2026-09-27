@@ -10,7 +10,10 @@ class UPointLightComponent;
 class UProjectileMovementComponent;
 class USphereComponent;
 class UStaticMeshComponent;
-class UNiagaraComponent;
+class UParticleSystemComponent;
+class UNiagaraSystem;
+class UParticleSystem;
+class USoundBase;
 
 /**
  * Server-spawned, replicated projectile used by the NetworkSync demo.
@@ -43,6 +46,12 @@ protected:
 		bool bFromSweep,
 		const FHitResult& SweepResult);
 
+	/** 在所有当前连接的客户端播放命中特效；命中判定仍只由服务器执行。 */
+	UFUNCTION(NetMulticast, Unreliable)
+	void MulticastPlayHitEffect(FVector_NetQuantize HitLocation, FVector_NetQuantizeNormal HitNormal);
+
+	void HandleProjectileImpact(AActor* OtherActor, const FVector& HitLocation, const FVector& HitNormal);
+
 	/** Collision root for the projectile. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Projectile", meta=(AllowPrivateAccess="true"))
 	TObjectPtr<USphereComponent> CollisionComponent;
@@ -51,9 +60,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Projectile", meta=(AllowPrivateAccess="true"))
 	TObjectPtr<UStaticMeshComponent> ProjectileMesh;
 
-	/** Optional fireball Niagara effect configured by BP_NetDemoProjectile. */
+	/** Optional Cascade fireball effect configured by BP_NetDemoProjectile. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Projectile", meta=(AllowPrivateAccess="true"))
-	TObjectPtr<UNiagaraComponent> NiagaraEffect;
+	TObjectPtr<UParticleSystemComponent> NiagaraEffect;
 
 	/** Optional point light configured by BP_NetDemoProjectile. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Projectile", meta=(AllowPrivateAccess="true"))
@@ -70,4 +79,19 @@ protected:
 	/** Projectile lifetime in seconds. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Projectile")
 	float LifeSeconds = 5.0f;
+
+	/** Optional Niagara system played at the server-confirmed hit location. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Projectile|Effects")
+	TObjectPtr<UNiagaraSystem> HitEffectSystem;
+
+	/** Optional Cascade particle system played at the server-confirmed hit location. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Projectile|Effects")
+	TObjectPtr<UParticleSystem> HitParticleSystem;
+
+	/** Optional sound played at the server-confirmed hit location. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Projectile|Effects")
+	TObjectPtr<USoundBase> HitSound;
+
+	/** Prevents Hit and Overlap callbacks from applying damage twice. */
+	bool bHasImpacted = false;
 };

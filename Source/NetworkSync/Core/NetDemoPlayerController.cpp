@@ -2,11 +2,70 @@
 
 #include "NetDemoPlayerController.h"
 
-#include "Engine/Engine.h"
+#include "Blueprint/UserWidget.h"
 #include "InputCoreTypes.h"
+#include "../UI/NetDemoSkillMessageWidget.h"
 
 ANetDemoPlayerController::ANetDemoPlayerController()
 {
+}
+
+void ANetDemoPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (IsLocalPlayerController() && SkillMessageWidgetClass)
+	{
+		SkillMessageWidget = CreateWidget<UNetDemoSkillMessageWidget>(this, SkillMessageWidgetClass);
+		if (SkillMessageWidget)
+		{
+			SkillMessageWidget->AddToViewport(100);
+		}
+	}
+}
+
+void ANetDemoPlayerController::ShowSkillMessage(const FText& Message, float DisplaySeconds)
+{
+	if (!IsLocalPlayerController())
+	{
+		return;
+	}
+
+	if (!SkillMessageWidget && SkillMessageWidgetClass)
+	{
+		SkillMessageWidget = CreateWidget<UNetDemoSkillMessageWidget>(this, SkillMessageWidgetClass);
+		if (SkillMessageWidget)
+		{
+			SkillMessageWidget->AddToViewport(100);
+		}
+	}
+
+	if (SkillMessageWidget)
+	{
+		SkillMessageWidget->ShowMessage(Message, DisplaySeconds);
+	}
+}
+
+void ANetDemoPlayerController::ShowSkillMessageIfHidden(const FText& Message)
+{
+	if (!IsLocalPlayerController())
+	{
+		return;
+	}
+
+	if (!SkillMessageWidget && SkillMessageWidgetClass)
+	{
+		SkillMessageWidget = CreateWidget<UNetDemoSkillMessageWidget>(this, SkillMessageWidgetClass);
+		if (SkillMessageWidget)
+		{
+			SkillMessageWidget->AddToViewport(100);
+		}
+	}
+
+	if (SkillMessageWidget && !SkillMessageWidget->IsMessageVisible())
+	{
+		SkillMessageWidget->ShowMessage(Message);
+	}
 }
 
 void ANetDemoPlayerController::SetupInputComponent()
@@ -37,10 +96,7 @@ void ANetDemoPlayerController::CycleNetworkSimulation()
 		? FString::Printf(TEXT("Network Simulation: ON | Lag: %d ms | Packet Loss: %d%%"), LagMilliseconds, PacketLossPercent)
 		: TEXT("Network Simulation: OFF | Lag: 0 ms | Packet Loss: 0%");
 
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, Status);
-	}
+	ShowSkillMessage(FText::FromString(Status), 3.0f);
 }
 
 void ANetDemoPlayerController::ApplyNetworkSimulation(int32 LagMilliseconds, int32 PacketLossPercent)

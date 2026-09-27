@@ -17,13 +17,15 @@ NetworkSync 是一个基于 Unreal Engine 5.7 Third Person 模板的局域网多
 Demo C++ 类位于：
 
 ```text
-Source/NetworkSync/Core/
+Source/NetworkSync/
 ├── NetDemoCharacter.h/.cpp
 ├── NetDemoGameMode.h/.cpp
-├── NetDemoHealthBar.h/.cpp
 ├── NetDemoPlayerController.h/.cpp
 ├── NetDemoRespawnPoint.h/.cpp
-└── NetDemoProjectile.h/.cpp
+├── NetDemoProjectile.h/.cpp
+└── UI/
+    ├── NetDemoHealthBar.h/.cpp
+    └── NetDemoSkillMessageWidget.h/.cpp
 ```
 
 对应蓝图和地图位于：
@@ -101,7 +103,7 @@ bool bIsDead;
 
 ### UNetDemoHealthBar
 
-文件：`Source/NetworkSync/Core/NetDemoHealthBar.h/.cpp`
+文件：`Source/NetworkSync/UI/NetDemoHealthBar.h/.cpp`
 
 职责：
 
@@ -167,6 +169,8 @@ void ServerRequestFire(const FVector& AimDirection);
 火球出生位置优先取角色 Mesh 的 `FireSocket`，再沿水平发射方向增加 `FireSocketForwardOffset`。如果 Mesh 没有该 Socket，则回退到角色位置上方。
 
 后续技能动画可以直接驱动 Mesh 上的 `FireSocket`，服务器生成点会使用服务器角色 Mesh 的当前 Socket 位置。
+
+火球技能的冷却由角色属性 `FireCooldown` 配置，默认值为 6 秒，可在 `BP_NetDemoCharacter` 的 Class Defaults 中调整。冷却计时只在服务器上使用 `LastFireTime` 判定，客户端不能绕过。冷却期间重复请求会被服务器拒绝，并通过 Client RPC 只通知发起请求的客户端，显示剩余冷却时间。
 
 ## 6. 伤害和生命值同步
 
@@ -293,6 +297,8 @@ bool bIsDead;
 
 服务器在 `GetLifetimeReplicatedProps` 中注册这两个属性。客户端收到初始复制或后续更新时，分别通过 `OnRep_CurrentHP` 和 `OnRep_IsDead` 刷新血条及死亡表现。因此晚加入客户端不依赖之前错过的伤害 RPC 或死亡 Multicast。
 
+具体时序是：服务器为新连接创建并 Possess 玩家 Pawn；该 Pawn 作为运行时复制 Actor 出现在新客户端的初始复制包中，同时发送当前位置、`CurrentHP` 和 `bIsDead`。客户端构造 Pawn 后执行初始属性接收，`OnRep_CurrentHP` 刷新血条数值，`OnRep_IsDead` 根据当前死亡状态播放倒地表现或恢复移动。角色位置则由 `SetReplicateMovement(true)` 的移动复制更新。因此同步的是服务器当前状态，而不是重新播放此前发生过的伤害、死亡或移动事件。
+
 ### 瞬时 Actor 边界
 
 火球是短生命周期的瞬时 Actor。晚加入客户端看不到已经发射、已经命中或已经销毁的火球，这是预期行为；火球不会被保存成历史事件，也不会为晚加入客户端补播过去的飞行和命中特效。晚加入验证应关注角色的持久状态：位置、`CurrentHP`、`bIsDead`、血条和当前死亡/存活表现。
@@ -326,10 +332,14 @@ bool bIsDead;
 - 死亡倒地动画和死亡状态复制
 - 服务器延迟 2 秒重生和最近重生点选择
 - L 键循环网络模拟（关闭、100ms、150ms、200ms；各档 5% 丢包）
+- 服务端权威火球技能冷却（默认 6 秒，可由蓝图配置）
+- 冷却提示使用本地 Widget，提示显示时重复按键不会刷新；Widget 的 `DisplayDuration` 可在蓝图中配置
+- 火球命中特效和音效的 NetMulticast 播放
+- 火球本体组件使用 Cascade `UParticleSystemComponent`；命中特效同时支持 Cascade `UParticleSystem` 和 Niagara `UNiagaraSystem`
+- 命中特效通过发射者角色的持久网络通道多播，避免短生命周期火球过早销毁导致客户端收不到 RPC
 
 尚未实现：
 
-- 命中特效 NetMulticast
 - 屏幕 HUD（NetMode、Ping、本地玩家名、自身 HP）
 - 正式胜负、计分和回合逻辑
 - 技能动画复制
@@ -337,8 +347,8 @@ bool bIsDead;
 ## 11. 网络边界声明
 
 本项目定位为网络同步基础演示，采用 UE 原生通用复制系统（未启用 Iris 高级特性）。
-已实现的机制：属性复制（Replicated / RepNotify）、Server/Client RPC、服务端权威伤害判定、OnRep 客户端表现。
+已实现的机制：属性复制（Replicated / RepNotify）、Server/Client RPC、服务端权威伤害判定、命中特效 NetMulticast、OnRep 客户端表现。
 未实现的机制：自定义传输协议、快照插值、客户端预测手写、断线重连、帧同步、增量热更、OnlineSubsystem 接入。
 设计决策：技能伤害在服务端计算以防止客户端作弊；移动同步依赖引擎内置
-CharacterMovementComponent 的客户端预测与服务端校正；表现层（特效/UI）通过 OnRep 触发，与逻辑解耦。
+CharacterMovementComponent 的客户端预测与服务端校正；持久状态通过属性复制，命中特效通过服务端触发的 NetMulticast 表现，与逻辑解耦。
 

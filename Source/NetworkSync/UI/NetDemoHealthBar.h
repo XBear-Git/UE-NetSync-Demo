@@ -9,9 +9,7 @@
 class APawn;
 class UProgressBar;
 
-/**
- * Blueprint-driven health bar displayed above a NetworkSync demo character.
- */
+/** Blueprint-driven health bar displayed above a NetworkSync demo character. */
 UCLASS(Blueprintable)
 class UNetDemoHealthBar : public UUserWidget
 {

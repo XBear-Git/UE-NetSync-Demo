@@ -6,6 +6,10 @@
 #include "NetworkSyncCharacter.h"
 #include "NetDemoCharacter.generated.h"
 
+class UNiagaraSystem;
+class UParticleSystem;
+class USoundBase;
+
 /**
  * Networked third-person character used by the NetworkSync demo.
  */
@@ -40,6 +44,19 @@ public:
 	/** Client request for a server-authoritative projectile spawn. */
 	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerRequestFire(const FVector& AimDirection);
+
+	/** 从持久存在的角色网络通道广播火球命中特效，避免短生命周期火球 RPC 丢失。 */
+	UFUNCTION(NetMulticast, Unreliable)
+	void MulticastPlayProjectileHitEffect(
+		FVector_NetQuantize HitLocation,
+		FVector_NetQuantizeNormal HitNormal,
+		UParticleSystem* CascadeEffect,
+		UNiagaraSystem* NiagaraEffect,
+		USoundBase* HitSound);
+
+	/** 服务端拒绝技能请求时，仅通知发起请求的客户端。 */
+	UFUNCTION(Client, Reliable)
+	void ClientNotifySkillCooldown(float RemainingSeconds);
 
 protected:
 	/** Death montage configured by BP_NetDemoCharacter. */
@@ -93,9 +110,12 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Combat")
 	TSubclassOf<class ANetDemoProjectile> ProjectileClass;
 
-	/** Minimum time between accepted server fire requests. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Combat")
-	float FireCooldown = 0.25f;
+	/** 服务端权威技能冷却，可在 BP_NetDemoCharacter 中配置。 */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Combat", meta=(ClampMin="0.0"))
+	float FireCooldown = 6.0f;
+
+	UFUNCTION(BlueprintPure, Category="Combat")
+	float GetFireCooldown() const { return FireCooldown; }
 
 	/** Socket on the character mesh at the top of the equipped wand. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Combat|Fire")
