@@ -40,5 +40,3 @@
 - **蓝图与地图**：`Content/Network/Core/`、`Content/Network/UI/`、`Content/Network/Maps/Lv_01.umap`
 
 ---
-
-> 详细实现说明见 `Docs/network_demo_implementation.md`。
